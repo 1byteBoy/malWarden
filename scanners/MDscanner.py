@@ -1,6 +1,8 @@
+import os
 import csv
 import json
 import requests
+from dotenv import load_dotenv
 
 # colorssssss
 RED    = '\033[1;31m'
@@ -10,8 +12,10 @@ YELLOW = '\033[1;33m'
 RCOLOR = '\033[0m'
 
 # Metadefender API key token
-# for 1 day it can scan 1000 hashes
-headers = { "apikey": "0af2845d347266ee9c8f3cba01896a6b" }
+envPath = '../secret/.env'
+load_dotenv(dotenv_path=envPath)
+TOKEN = os.getenv('META_TOKEN')
+headers = { "apikey": TOKEN } # for 1 day it can scan 1000 hashes
 
 def metaDefender (file_sha256):
 
