@@ -63,4 +63,6 @@ def choice () :
         help()
 
 
-if __name__ == "__main__": choice()
+if __name__ == "__main__": 
+    try: choice()
+    except KeyboardInterrupt: print("\nGood Bye\n")
